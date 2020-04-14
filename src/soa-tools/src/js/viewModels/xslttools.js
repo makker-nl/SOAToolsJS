@@ -32,7 +32,10 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs
           }
 
           function getNamespaceExcludeList(namespaces) {
-              var text = replaceAll(namespaces, "xmlns:", "\n");
+              var text = namespaces;
+              text = replaceAll(text, "<xsl:stylesheet", "\n");
+              text = replaceAll(text, ">", "\n");
+              text = replaceAll(text, "xmlns:", "\n");
               text = replaceAll(text, "version=", "\n=");
               text = replaceAll(text, "exclude-result-prefixes=", "\n=");
               text = removeAllAttributeValues(text);
