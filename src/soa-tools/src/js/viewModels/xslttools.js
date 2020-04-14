@@ -5,7 +5,7 @@
  * @ignore
  */
 /*
- * Your dashboard ViewModel code goes here
+ * Your XSLTools ViewModel code goes here
  */
 define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'ojs/ojknockout', 'ojs/ojinputtext', 'ojs/ojlabel', 'ojs/ojformlayout', 'ojs/ojbutton'],
   function (accUtils, ko, Bootstrap, ResponsiveUtils, ResponsiveKnockoutUtils) {
