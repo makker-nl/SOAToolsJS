@@ -19,7 +19,7 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs
               return result;
           }
           function removeAllAttributeValues(text) {
-              while (text.indexOf("=")>=0){
+              while (text.indexOf("=") >= 0) {
                   eqPos = text.indexOf("=");
                   nlPos = text.indexOf("\n", eqPos);
                   if (nlPos >= 0) {
@@ -41,8 +41,8 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs
               text = removeAllAttributeValues(text);
               text = replaceAll(text, "\r", "\n");
               text = replaceAll(text, "\n", " ");
-              text = replaceAll(text, "  ", " " );
-              text = "exclude-result-prefixes=\""+text.trim()+"\"";
+              text = replaceAll(text, "  ", " ");
+              text = "exclude-result-prefixes=\"" + text.trim() + "\"";
               return text;
           }
           var self = this;
@@ -58,10 +58,9 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs
           this.rawXslNamespaces = ko.observable('');
           this.xslNamespaceExcludes = ko.observable('');
           this.rawXslNamespaceExcludes = ko.observable('');
-          this.buttonClick = function (event) {
-              var xslNamespaces = document.getElementById("xslNamespaces");
-              var excludeNamespaces = getNamespaceExcludeList(xslNamespaces.value);
-              this.xslNamespaceExcludes(excludeNamespaces);
+          this.buttonClick = function (event, viewModel) {
+              var excludeNamespaces = getNamespaceExcludeList(viewModel.xslNamespaces());
+              viewModel.xslNamespaceExcludes(excludeNamespaces);
               return true;
           }.bind(this);
           /**
